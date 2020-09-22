@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Youtube Skip Ad Trigger",
+    "description": "Youtube Video Ad and Banner Ad Skipper.",
+    "version": "1.0",
+    "page_action": {
+        "default_popup": "popup.html",
+        "default_title": "Youtube Skip Ad Trigger"
+    },
+    "icons": {
+        "128": "128.png",
+        "48": "48.png",
+        "16": "16.png"
+      },
+    "background": {
+        "scripts": [
+            "eventPage.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "https://*.youtube.com/*"
+    ]
+}
